@@ -1,19 +1,19 @@
 <template>
   <v-container>
     <v-row class="text-center">
-      <v-col cols="12" >
+      <v-col cols="12">
         <v-img
-          :src="require('@/assets/img/eatwiser.png')"
-          class="my-3"
-          contain
-          height="200"
+            :src="require('@/assets/img/eatwiser.png')"
+            class="my-3"
+            contain
+            height="200"
         />
       </v-col>
 
       <v-col class="mb-4" cols="12">
-        <h1 class="display-2 font-weight-bold mb-3">
+        <h5 class="display-2 font-weight-bold mb-3">
           Smarter way of buying food
-        </h1>
+        </h5>
 
         <p class="subheading font-weight-regular">
           No more running around to find ingredients of amazing recipes or
@@ -22,12 +22,12 @@
       </v-col>
 
       <v-col
-        col-md="8"
-        offset-md="2"
-        col-sm="12"
-        offset-sm="0"
-        col-lg="8"
-        offset-lg="0"
+          col-md="8"
+          offset-md="2"
+          col-sm="12"
+          offset-sm="0"
+          col-lg="8"
+          offset-lg="0"
       >
         <v-text-field outlined label="Search for a meal"></v-text-field>
       </v-col>
@@ -55,11 +55,11 @@
       <v-col cols="12">
         <v-row>
           <v-col
-            col-md="10"
-            offset-md="1"
-            col-sm="12"
-            col-lg="10"
-            offset-lg="1"
+              col-md="10"
+              offset-md="1"
+              col-sm="12"
+              col-lg="10"
+              offset-lg="1"
           >
             <v-btn style="width: 100%;" color="primary">
               Search
@@ -70,15 +70,15 @@
     </v-row>
     <v-row>
       <v-col col-md="4" col="sm=12">
-        <v-card outlined class="circle-item" to="/diet-details">
+        <v-card outlined class="eatwiser-item" to="/diet-details">
           <v-img
-            class=""
-            style="width: 100%;"
-            :src="require('@/assets/img/diet.jpg')"
-            lazy-src
-            @error="failedToloadImage = true"
+              class=""
+              style="width: 100%;"
+              :src="require('@/assets/img/diet.jpg')"
+              lazy-src
+              @error="failedToloadImage = true"
           >
-            <span class="circle-type">type</span>
+            <span class="eatwiser-type">type</span>
           </v-img>
           <v-card-text>
             <h3 class="body-1">title</h3>
@@ -86,22 +86,24 @@
           <v-card-actions right>
             <v-row align="center" justify="end">
               <v-col class="text-right">
-                <span small text class="caption join-group-text">See details</span>
+                <span small text class="caption join-group-text"
+                >See details</span
+                >
               </v-col>
             </v-row>
           </v-card-actions>
         </v-card>
       </v-col>
       <v-col col-md="4" col="sm=12">
-        <v-card outlined class="circle-item">
+        <v-card outlined class="eatwiser-item">
           <v-img
-            class=""
-            style="width: 100%;"
-            :src="require('@/assets/img/diet.jpg')"
-            lazy-src
-            @error="failedToloadImage = true"
+              class=""
+              style="width: 100%;"
+              :src="require('@/assets/img/diet.jpg')"
+              lazy-src
+              @error="failedToloadImage = true"
           >
-            <span class="circle-type">type</span>
+            <span class="eatwiser-type">type</span>
           </v-img>
           <v-card-text>
             <h3 class="body-1">title</h3>
@@ -109,22 +111,24 @@
           <v-card-actions right>
             <v-row align="center" justify="end">
               <v-col class="text-right">
-                <span small text class="caption join-group-text">See details</span>
+                <span small text class="caption join-group-text"
+                >See details</span
+                >
               </v-col>
             </v-row>
           </v-card-actions>
         </v-card>
       </v-col>
       <v-col col-md="4" col="sm=12">
-        <v-card outlined class="circle-item">
+        <v-card outlined class="eatwiser-item">
           <v-img
-            class=""
-            style="width: 100%;"
-            :src="require('@/assets/img/diet.jpg')"
-            lazy-src
-            @error="failedToloadImage = true"
+              class=""
+              style="width: 100%;"
+              :src="require('@/assets/img/diet.jpg')"
+              lazy-src
+              @error="failedToloadImage = true"
           >
-            <span class="circle-type">type</span>
+            <span class="eatwiser-type">type</span>
           </v-img>
           <v-card-text>
             <h3 class="body-1">title</h3>
@@ -132,7 +136,9 @@
           <v-card-actions right>
             <v-row align="center" justify="end">
               <v-col class="text-right">
-                <span small text class="caption join-group-text">See details</span>
+                <span small text class="caption join-group-text"
+                >See details</span
+                >
               </v-col>
             </v-row>
           </v-card-actions>
@@ -201,10 +207,10 @@ export default {
 };
 </script>
 <style lang="scss">
-.circle-item {
-  .circle-type {
+.eatwiser-item {
+  .eatwiser-type {
     color: #fff;
-    background: #f27561;
+    background: #5be1c8;
     padding: 1px 4px 1px 4px;
     display: inline-block;
     position: absolute;
@@ -214,7 +220,7 @@ export default {
     border-radius: 2px;
   }
   .join-group-text {
-    color: #f27561;
+    color: #5be1c8;
   }
 }
 </style>

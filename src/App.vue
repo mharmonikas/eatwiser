@@ -2,15 +2,15 @@
   <v-app id="app">
     <v-app-bar app color="primary" dark class="mb-5">
       <div class="d-flex align-center">
-        <v-img
-          to="/"
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+        <!--        <v-img-->
+        <!--          to="/"-->
+        <!--          alt="Vuetify Logo"-->
+        <!--          class="shrink mr-2"-->
+        <!--          contain-->
+        <!--          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"-->
+        <!--          transition="scale-transition"-->
+        <!--          width="40"-->
+        <!--        />-->
 
         <h2>Eatwiser</h2>
       </div>
@@ -18,14 +18,14 @@
       <v-spacer></v-spacer>
 
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
+          href="https://github.com/vuetifyjs/vuetify/releases/latest"
+          target="_blank"
+          text
       >
         <v-icon>mdi-cart</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-main class="mt-10">
+    <v-main class="mt-1">
       <router-view />
     </v-main>
   </v-app>
@@ -51,7 +51,7 @@ body {
 
   #app {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
