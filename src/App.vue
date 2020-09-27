@@ -1,31 +1,26 @@
 <template>
   <v-app id="app">
     <v-app-bar app color="primary" dark class="mb-5">
-      <div class="d-flex align-center">
-        <!--        <v-img-->
-        <!--          to="/"-->
-        <!--          alt="Vuetify Logo"-->
-        <!--          class="shrink mr-2"-->
-        <!--          contain-->
-        <!--          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"-->
-        <!--          transition="scale-transition"-->
-        <!--          width="40"-->
-        <!--        />-->
+      <router-link to="/" class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          :src="require('@/assets/img/eat-wiser-white.png')"
+          transition="scale-transition"
+          width="120"
+        />
 
-        <h2>Eatwiser</h2>
-      </div>
+        <!--        <h2>Eatwiser</h2>-->
+      </router-link>
 
       <v-spacer></v-spacer>
 
-      <v-btn
-          href="https://github.com/vuetifyjs/vuetify/releases/latest"
-          target="_blank"
-          text
-      >
+      <v-btn to="/cart" text>
         <v-icon>mdi-cart</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-main class="mt-1">
+    <v-main class="mt-11">
       <router-view />
     </v-main>
   </v-app>
@@ -51,7 +46,7 @@ body {
 
   #app {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;

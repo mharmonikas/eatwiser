@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" class="mt-11">
-    <v-col lg="10" md="10" sm="10" xs="12">
+    <v-col v-if="item" lg="10" md="10" sm="10" xs="12">
       <v-card max-height="400" tile>
         <v-img
           :src="require('@/assets/img/diet.jpg')"
@@ -11,15 +11,13 @@
           gradient="to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0.2)"
         >
           <v-card-text>
-            <p class="body font-weight-bold pa-1 white--text">
-              Type
-            </p>
-            <p class="display-1 font-weight-bold pa-1 white--text">
-              Title
-            </p>
-            <p class="subtitle-1 font-weight-bold pa-1 white--text">
-              <v-icon color="#fff" class="mr-2">mdi-calendar</v-icon>info
-            </p>
+            <span
+              v-for="(tag, i) in item.tags"
+              :key="i"
+              class="body font-weight-bold pa-1 white--text"
+            >
+              {{ tag }}
+            </span>
           </v-card-text>
         </v-img>
       </v-card>
@@ -27,16 +25,63 @@
         <v-col xs="12" md="8" class="pt-0">
           <div id="description" class="pb-6 pa-10 tabItem">
             <p class="title">Description</p>
-            <p class="pr-10 body-1">
-              desc
-            </p>
-            <p class="body-1"><b>Ingridions:</b> dd</p>
+            <ul>
+              <li>Cals: {{ item.cals }}</li>
+            </ul>
+            <p class="title mt-5">Nutrition</p>
+            <ul>
+              <li>Carbohydrates: {{ item.nutrition.carbohydrates }}</li>
+              <li>Fat: {{ item.nutrition.fat }}</li>
+              <li>Protein: {{ item.nutrition.protein }}</li>
+            </ul>
+            <p class="body-1 mt-10"><b>Ingredients:</b></p>
             <div class="pt-2">
-              <v-chip outlined class="mr-2 body-1">dsa</v-chip>
+              <v-chip
+                v-for="(ingredient, ind) in item.ingredients"
+                :key="ind"
+                outlined
+                class="mr-2 body-1"
+                >{{ ingredient.name }}</v-chip
+              >
             </div>
           </div>
         </v-col>
-        <v-btn color="primary" style="width: 100%;">Order $2</v-btn>
+        <v-btn @click="book" color="primary" style="width: 100%;"
+          >Order $2</v-btn
+        >
+        <v-dialog v-model="dialog" max-width="290">
+          <v-card>
+            <v-card-title class="headline">
+              Order this diet?
+            </v-card-title>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+
+              <v-btn color="green darken-1" text @click="dialog = false">
+                No
+              </v-btn>
+
+              <v-btn color="green darken-1" text @click="confirmBook">
+                Yes
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+        <v-snackbar v-model="snackbar">
+          Diet ordered successfully.
+
+          <template v-slot:action="{ attrs }">
+            <v-btn
+              color="primary"
+              text
+              v-bind="attrs"
+              @click="snackbar = false"
+            >
+              Close
+            </v-btn>
+          </template>
+        </v-snackbar>
 
         <!--        <v-col>-->
         <!--          <v-card>-->
@@ -74,7 +119,38 @@
 
 <script>
 export default {
-  name: "DietDetails"
+  name: "DietDetails",
+  data: () => ({
+    item: {},
+    price: 0,
+    dialog: false,
+    snackbar: false
+  }),
+  mounted() {
+    this.$axios
+      .get(
+        `http://eatwiser.duckdns.org:3000/api/recipe/${this.$route.params.id}`
+      )
+      .then(res => {
+        const vm = this;
+        vm.item = res.data[0];
+        console.log(vm.item[0]);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  },
+  methods: {
+    book() {
+      this.dialog = true;
+    },
+    confirmBook() {
+      this.dialog = false;
+      this.snackbar = true;
+      this.$store.commit("app/addRecipe", this.item, { root: true });
+      // this.$store.dispatch('app/addRecipe', this.item)
+    }
+  }
 };
 </script>
 
