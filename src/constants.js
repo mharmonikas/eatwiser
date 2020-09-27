@@ -1,0 +1,148 @@
+const Role = {
+  ADMIN: 'admin',
+  USER: 'user',
+  FACILITATOR: 'facilitator'
+}
+
+const AGORA_APP_ID = '00d06ea676d041df9024466dc8e4de6f'
+
+const CIRCLE_TYPES = [
+  'Forum',
+  'Council',
+  'Meditation',
+  'Teen Process Group',
+  'Social Skills Group',
+  "Men's Circle",
+  'Women Circle',
+  'Cacao Ceremony',
+  'Mothers Support Group',
+  'Family Circle',
+  'Acceptance and Commitment (ACT)',
+  'Attachment-based',
+  'Cognitive Behavioral (CBT)',
+  'Dialectical (DBT)',
+  'Eclectic',
+  'Feminist',
+  'Integrative',
+  'Interpersonal',
+  'Mindfulness-Based (MBCT)',
+  'Motivational Interviewing',
+  'Psychodynamic',
+  'Psychological Testing and Evaluation',
+  'Solution Focused Brief (SFBT)',
+  'Strength-Based',
+  'Trauma Focused',
+]
+
+const EXPERIENCE = [
+  'Acceptance and Commitment Therapy',
+  'Adlerian Therapy',
+  'Animal-Assisted Therapy',
+  'Applied Behavior Analysis',
+  'Art Therapy',
+  'Attachment-Based Therapy',
+  'Bibliotherapy',
+  'Biofeedback',
+  'Brain Stimulation Therapy',
+  'Coaching',
+  'Cognitive Behavioral Therapy',
+  'Cognitive Processing Therapy',
+  'Cognitive Stimulation Therapy',
+  'Compassion-Focused Therapy',
+  'Culturally Sensitive Therapy',
+  'Dialectical Behavior Therapy',
+  'Eclectic Therapy',
+  'Emotionally Focused Therapy',
+  'Existential Therapy',
+  'Experiential Therapy',
+  'Exposure and Response Prevention',
+  'Expressive Arts Therapy',
+  'Eye Movement Desensitization and Reprocessing Therapy',
+  'Family Systems Therapy',
+  'Feminist Therapy',
+  'Forensic Therapy',
+  'Gestalt Therapy',
+  'Human Givens Therapy',
+  'Humanistic Therapy',
+  'Hypnotherapy',
+  'Imago Relationship Therapy',
+  'Integrative Therapy',
+  'Internal Family Systems Therapy',
+  'Interpersonal Psychotherapy',
+  'Jungian Therapy',
+  'Marriage and Family Therapy',
+  'Mentalization-Based Therapy',
+  'Mindfulness-Based Cognitive Therapy',
+  'Motivational Interviewing',
+  'Multicultural Therapy',
+  'Music Therapy',
+  'Narrative Therapy',
+  'Neuro-Linguistic Programming Therapy',
+  'Neurofeedback',
+  'Parent-Child Interaction Therapy (PCIT)',
+  'Person-Centered Therapy',
+  'Play Therapy',
+  'Positive Psychology',
+  'Prolonged Exposure Therapy',
+  'Psychoanalytic Therapy',
+  'Psychodynamic Therapy',
+  'Psychological Testing and Evaluation',
+  'Rational Emotive Behavior Therapy',
+  'Reality Therapy',
+  'Relational Therapy',
+  'Sandplay Therapy',
+  'Social Recovery Therapy',
+  'Social Recovery Therapy',
+  'Solution-Focused Brief Therapy',
+  'Somatic Therapy',
+  'Strength-Based Therapy',
+  'Structural Family Therapy',
+  'The Gottman Method',
+  'Therapeutic Intervention',
+  'Transpersonal Therapy',
+  'Trauma-Focused Cognitive Behavior Therapy',
+  'Business facilitators',
+  'Conflict resolution facilitators',
+  'Educational facilitators',
+  'Small group facilitators',
+  'Training facilitators',
+  'Wraparound facilitators'
+]
+
+const AGES = [
+  'Toddlers / Preschoolers (0 to 6)',
+  'Children (6 to 10)',
+  'Preteens / Tweens (11 to 13)',
+  'Adolescents / Teenagers (14 to 19)',
+  'Adults',
+  'Elders (65+)'
+]
+
+const COMMUNITIES = [
+  'Bisexual',
+  'Gay',
+  'Lesbian',
+  'Transgender',
+  'Aviation Professionals',
+  'Cancer',
+  'HIV / AIDS',
+  'Racial Justice',
+  'Veterans'
+]
+
+const Labels = [
+  'Love',
+  'Man',
+  'Woman',
+  'Support group'
+]
+
+export { 
+  Role,
+  AGORA_APP_ID,
+  CIRCLE_TYPES,
+  EXPERIENCE,
+  AGES,
+  COMMUNITIES,
+  Labels
+}
